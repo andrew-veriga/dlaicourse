@@ -15,14 +15,13 @@ async function train() {
   dataset.ys = null;
   dataset.encodeLabels(5);
     
-  // In the space below create a neural network that can classify hand gestures
-  // corresponding to rock, paper, scissors, lizard, and spock. The first layer
-  // of your network should be a flatten layer that takes as input the output
-  // from the pre-trained MobileNet model. Since we have 5 classes, your output
-  // layer should have 5 units and a softmax activation function. You are free
-  // to use as many hidden layers and neurons as you like.  
-  // HINT: Take a look at the Rock-Paper-Scissors example. We also suggest
-  // using ReLu activation functions where applicable.
+// создайте нейронную сеть, которая может классифицировать жесты рук
+// соответствующие камню, бумаге, ножницам, ящерице и споку.
+// ту часть, которая создаёт ваши слои можете скопировать из примера "Камень ножницы бумага"
+// Поскольку у нас 5 классов, ваш вывходной слой должен иметь 5 нейронов и функцию активации softmax. 
+// Вы можете использовать сколько угодно скрытых слоев и нейронов.
+// ПОДСКАЗКА: используйте функции активации ReLu, где это применимо.
+	
   model = tf.sequential({
     layers: [
         
@@ -32,12 +31,10 @@ async function train() {
   });
     
    
-  // Set the optimizer to be tf.train.adam() with a learning rate of 0.0001.
+  // оптимизатор выбирайте tf.train.adam()  learning rate  0.0001.
   const optimizer = // YOUR CODE HERE
     
-        
-  // Compile the model using the categoricalCrossentropy loss, and
-  // the optimizer you defined above.
+  // Компилируйте модель с использованием функции потерь categoricalCrossentropy 
   model.compile(// YOUR CODE HERE);
  
   let loss = 0;
@@ -72,10 +69,9 @@ function handleButton(elem){
 			document.getElementById("spocksamples").innerText = "Spock samples:" + spockSamples;
 			break;
             
-        // Add a case for lizard samples.
-        // HINT: Look at the previous cases.
+        // добавьте case для  ящерицы и спока.
             
-        // YOUR CODE HERE
+        // ВАШ КОД ЗДЕСЬ
 		
             
 	}
@@ -109,10 +105,9 @@ async function predict() {
 			predictionText = "I see Spock";
 			break;
             
-        // Add a case for lizard samples.
-        // HINT: Look at the previous cases.
+        // добавьте case для  ящерицы и спока.
             
-        // YOUR CODE HERE 
+        // ВАШ КОД ЗДЕСЬ
 	
             
 	}
